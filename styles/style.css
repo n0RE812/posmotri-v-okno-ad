@@ -16,6 +16,9 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -37,7 +40,6 @@ ol {
   list-style: none;
 }
 
-/* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
@@ -48,4 +50,44 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 399px;
+  grid-template-rows: auto 1fr;
+  gap: 30px;
+  align-items: end;
+  inline-size: 1140px;
+  block-size: 534px;
+  grid-template-areas: 
+    "search-form search-form"
+    "list details";
+}
+
+.content__search-form {
+  grid-area: search-form;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.content__list {
+  grid-area: list;
+}
+
+.content__list-container {
+  block-size: 298px;
+  overflow-y: auto;
+}
+
+.content__details {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 2px 0;
 }
